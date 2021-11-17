@@ -1,0 +1,602 @@
+<!doctype html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel='icon' type="image/png" href="./icon.png">
+    <script type="text/javascript">
+      window._production=".";
+window.onload = function onload() {
+    function detectIEEdge() {
+        let ua = window.navigator.userAgent;
+        return ua.indexOf("MSIE ") >= 0 ||
+            ua.indexOf("Trident/") >= 0 ||
+            ua.indexOf("Edge/") >= 0;
+    }
+
+    function detectChromeIOS() {
+        let ua = window.navigator.userAgent;
+        return ua.indexOf("CriOS ") >= 0 &&
+	    ua.indexOf("like Mac OS X") >= 0;
+    }
+
+    if (detectIEEdge()) {
+        let elem = document.getElementById("browserCheck");
+        elem.style.setProperty("display", "inherit");
+        return;
+    }
+
+    if (detectChromeIOS()) {
+        let elem = document.getElementById("browserCheckChromeIos");
+        elem.style.setProperty("display", "inherit");
+        return;
+    }
+
+    let c = document.createElement("script");
+    c.id = "croquet";
+    c.src = "./croquet/croquet.min.js";
+    c.type = "text/javascript";
+    document.body.appendChild(c);
+    c.onload = function onload() {
+        let s = document.createElement("script");
+        s.id = "landingLoader";
+        s.src = "./landing-loader.js";
+        s.type = "module";
+        s.onload = function onload() {
+             window.landingLoader();
+        };
+        document.body.appendChild(s);
+    };
+};
+    </script>
+  </head>
+  <body style="margin: 0px; touch-action: manipulation">
+    <svg id="landing-svg" display="none">
+	<defs>
+		<g id="img-door-joina">
+			<path xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF" d="M11,1.72V4H3v7.25H7.36L5.64,9.53,6.7,8.47,10.23,12,6.7,15.53,5.64,14.47l1.72-1.72H3V20h8v2.28l10-2.5V4.22Zm8,16.5-6,1.5V4.28l6,1.5Z"/><circle xmlns="http://www.w3.org/2000/svg" cx="15" cy="12" r="1" fill="#FFFFFF"/>
+		</g>
+		<g id="img-mic-gray">
+			<defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs><g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><g stroke-linejoin="square"><circle cx="20" cy="20" r="19.5" stroke="url(#a)"/><circle cx="20" cy="20" r="19" stroke="#808080" stroke-width="2"/></g><path fill="#808080" d="M12,2 C13.6568542,2 15,3.34314575 15,5 L15,11 C15,12.6568542 13.6568542,14 12,14 C10.3431458,14 9,12.6568542 9,11 L9,5 C9,3.34314575 10.3431458,2 12,2 M19,11 C19,14.53 16.39,17.44 13,17.93 L13,21 L11,21 L11,17.93 C7.61,17.44 5,14.53 5,11 L7,11 C7,13.7614237 9.23857625,16 12,16 C14.7614237,16 17,13.7614237 17,11 L19,11 Z" transform="translate(8 8)"/><path d="M0 0H24V24H0z" transform="translate(8 8)"/></g>
+		</g>
+		<g id="img-mic-off">
+			<defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs><g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><g stroke-linejoin="square"><circle cx="20" cy="20" r="19.5" stroke="url(#a)"/><circle cx="20" cy="20" r="19" stroke="#F09132" stroke-width="2"/></g><path fill="#F09132" d="M12,2 C13.6568542,2 15,3.34314575 15,5 L15,11 C15,12.6568542 13.6568542,14 12,14 C10.3431458,14 9,12.6568542 9,11 L9,5 C9,3.34314575 10.3431458,2 12,2 M19,11 C19,14.53 16.39,17.44 13,17.93 L13,21 L11,21 L11,17.93 C7.61,17.44 5,14.53 5,11 L7,11 C7,13.7614237 9.23857625,16 12,16 C14.7614237,16 17,13.7614237 17,11 L19,11 Z" transform="translate(8 8)"/><path d="M0 0H24V24H0z" transform="translate(8 8)"/><path stroke="#F09132" stroke-linecap="square" stroke-width="2" d="M0 0L26 26" transform="translate(7 7)"/></g>
+		</g>
+		<g id="img-settings-off">
+			<g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><path fill="#8D8D8D" d="M19.14,12.94 C19.18,12.64 19.2,12.33 19.2,12 C19.2,11.68 19.18,11.36 19.13,11.06 L21.16,9.48 C21.3403827,9.33132048 21.3906241,9.07592675 21.28,8.87 L19.36,5.55 C19.2432801,5.34262117 18.9940012,5.24966973 18.77,5.33 L16.38,6.29 C15.88,5.91 15.35,5.59 14.76,5.35 L14.4,2.81 C14.3634028,2.57343902 14.1593737,2.39916416 13.92,2.39999701 L10.08,2.39999701 C9.84,2.39999701 9.65,2.57 9.61,2.81 L9.25,5.35 C8.66,5.59 8.12,5.92 7.63,6.29 L5.24,5.33 C5.02,5.25 4.77,5.33 4.65,5.55 L2.74,8.87 C2.62,9.08 2.66,9.34 2.86,9.48 L4.89,11.06 C4.84,11.36 4.8,11.69 4.8,12 C4.8,12.31 4.82,12.64 4.87,12.94 L2.84,14.52 C2.65961733,14.6686795 2.60937594,14.9240733 2.72,15.13 L4.64,18.45 C4.76,18.67 5.01,18.74 5.23,18.67 L7.62,17.71 C8.12,18.09 8.65,18.41 9.24,18.65 L9.6,21.19 C9.65,21.43 9.84,21.6 10.08,21.6 L13.92,21.6 C14.16,21.6 14.36,21.43 14.39,21.19 L14.75,18.65 C15.34,18.41 15.88,18.09 16.37,17.71 L18.76,18.67 C18.98,18.75 19.23,18.67 19.35,18.45 L21.27,15.13 C21.39,14.91 21.34,14.66 21.15,14.52 L19.14,12.94 L19.14,12.94 Z M12,15.6 C10.02,15.6 8.4,13.98 8.4,12 C8.4,10.02 10.02,8.4 12,8.4 C13.98,8.4 15.6,10.02 15.6,12 C15.6,13.98 13.98,15.6 12,15.6 Z"/><path d="M0 0H24V24H0z"/></g>
+		</g>
+		<g id="img-mic-on">
+			<defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs><g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><g stroke-linejoin="square"><circle cx="20" cy="20" r="19.5" stroke="url(#a)"/><circle cx="20" cy="20" r="19" stroke="#2BA341" stroke-width="2"/></g><path fill="#2BA341" d="M12,2 C13.6568542,2 15,3.34314575 15,5 L15,11 C15,12.6568542 13.6568542,14 12,14 C10.3431458,14 9,12.6568542 9,11 L9,5 C9,3.34314575 10.3431458,2 12,2 M19,11 C19,14.53 16.39,17.44 13,17.93 L13,21 L11,21 L11,17.93 C7.61,17.44 5,14.53 5,11 L7,11 C7,13.7614237 9.23857625,16 12,16 C14.7614237,16 17,13.7614237 17,11 L19,11 Z" transform="translate(8 8)"/><path d="M0 0H24V24H0z" transform="translate(8 8)"/></g>
+		</g>
+		<g id="img-settings-on">
+			<g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><path fill="#4D4D4D" d="M19.14,12.94 C19.18,12.64 19.2,12.33 19.2,12 C19.2,11.68 19.18,11.36 19.13,11.06 L21.16,9.48 C21.3403827,9.33132048 21.3906241,9.07592675 21.28,8.87 L19.36,5.55 C19.2432801,5.34262117 18.9940012,5.24966973 18.77,5.33 L16.38,6.29 C15.88,5.91 15.35,5.59 14.76,5.35 L14.4,2.81 C14.3634028,2.57343902 14.1593737,2.39916416 13.92,2.39999701 L10.08,2.39999701 C9.84,2.39999701 9.65,2.57 9.61,2.81 L9.25,5.35 C8.66,5.59 8.12,5.92 7.63,6.29 L5.24,5.33 C5.02,5.25 4.77,5.33 4.65,5.55 L2.74,8.87 C2.62,9.08 2.66,9.34 2.86,9.48 L4.89,11.06 C4.84,11.36 4.8,11.69 4.8,12 C4.8,12.31 4.82,12.64 4.87,12.94 L2.84,14.52 C2.65961733,14.6686795 2.60937594,14.9240733 2.72,15.13 L4.64,18.45 C4.76,18.67 5.01,18.74 5.23,18.67 L7.62,17.71 C8.12,18.09 8.65,18.41 9.24,18.65 L9.6,21.19 C9.65,21.43 9.84,21.6 10.08,21.6 L13.92,21.6 C14.16,21.6 14.36,21.43 14.39,21.19 L14.75,18.65 C15.34,18.41 15.88,18.09 16.37,17.71 L18.76,18.67 C18.98,18.75 19.23,18.67 19.35,18.45 L21.27,15.13 C21.39,14.91 21.34,14.66 21.15,14.52 L19.14,12.94 L19.14,12.94 Z M12,15.6 C10.02,15.6 8.4,13.98 8.4,12 C8.4,10.02 10.02,8.4 12,8.4 C13.98,8.4 15.6,10.02 15.6,12 C15.6,13.98 13.98,15.6 12,15.6 Z"/><path d="M0 0H24V24H0z"/></g>
+		</g>
+		<g id="img-video-gray">
+			<defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs><g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><g stroke-linejoin="square"><circle cx="20" cy="20" r="19.5" stroke="url(#a)"/><circle cx="20" cy="20" r="19" stroke="#808080" stroke-width="2"/></g><path fill="#808080" d="M16.9989,6.2046 L17.0006042,10.6195468 C18.2902356,10.0672756 19.1986074,9.68953796 20.8459,9.0276 C20.9479,8.9836 20.9609,8.9896 20.9609,9.0666 L20.9609,14.9176 C20.9609,15.0146 20.9609,15.0146 20.8779,14.9756 C19.2433502,14.2817211 18.3163993,13.8844741 17.0003388,13.3270161 L16.9989,17.8996 C16.9989,18.0996 17.0199,18.0996 16.8189,18.0996 L3.1809,18.0996 C3.03165,18.0996 3.005025,18.0996 3.00104062,18.015225 L3.00104062,6.088975 C3.005025,6.0046 3.03165,6.0046 3.1809,6.0046 L16.8189,6.0036 C17.0199,6.0036 16.9989,6.0036 16.9989,6.2046 Z" transform="translate(8 8)"/></g>
+		</g>
+		<g id="img-video-off">
+			<defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs><g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><g stroke-linejoin="square"><circle cx="20" cy="20" r="19.5" stroke="url(#a)"/><circle cx="20" cy="20" r="19" stroke="#F09132" stroke-width="2"/></g><path fill="#F09132" d="M16.9989,6.2046 L17.0006042,10.6195468 C18.2902356,10.0672756 19.1986074,9.68953796 20.8459,9.0276 C20.9479,8.9836 20.9609,8.9896 20.9609,9.0666 L20.9609,14.9176 C20.9609,15.0146 20.9609,15.0146 20.8779,14.9756 C19.2433502,14.2817211 18.3163993,13.8844741 17.0003388,13.3270161 L16.9989,17.8996 C16.9989,18.0996 17.0199,18.0996 16.8189,18.0996 L3.1809,18.0996 C3.03165,18.0996 3.005025,18.0996 3.00104062,18.015225 L3.00104062,6.088975 C3.005025,6.0046 3.03165,6.0046 3.1809,6.0046 L16.8189,6.0036 C17.0199,6.0036 16.9989,6.0036 16.9989,6.2046 Z" transform="translate(8 8)"/><path stroke="#F09132" stroke-linecap="square" stroke-width="2" d="M0 0L26 26" transform="translate(7 7)"/></g>
+		</g>
+		<g id="img-video-on">
+			<defs xmlns="http://www.w3.org/2000/svg"><linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient></defs><g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><g stroke-linejoin="square"><circle cx="20" cy="20" r="19.5" stroke="url(#a)"/><circle cx="20" cy="20" r="19" stroke="#2BA341" stroke-width="2"/></g><path fill="#2BA341" d="M16.9989,6.2046 L17.0006042,10.6195468 C18.2902356,10.0672756 19.1986074,9.68953796 20.8459,9.0276 C20.9479,8.9836 20.9609,8.9896 20.9609,9.0666 L20.9609,14.9176 C20.9609,15.0146 20.9609,15.0146 20.8779,14.9756 C19.2433502,14.2817211 18.3163993,13.8844741 17.0003388,13.3270161 L16.9989,17.8996 C16.9989,18.0996 17.0199,18.0996 16.8189,18.0996 L3.1809,18.0996 C3.03165,18.0996 3.005025,18.0996 3.00104062,18.015225 L3.00104062,6.088975 C3.005025,6.0046 3.03165,6.0046 3.1809,6.0046 L16.8189,6.0036 C17.0199,6.0036 16.9989,6.0036 16.9989,6.2046 Z" transform="translate(8 8)"/></g>
+		</g>
+	</defs>
+    </svg>
+    <div id="landing-background">
+      <div id="panel">
+        <div id="head">
+          <div id="logo"></div>
+          <div id="welcome">Welcome!</div>
+        </div>
+        <div id="titleRow">
+          <div id="titleLabel">Room:</div>
+          <div id="title"></div>
+        </div>
+        <div id="nicknameRow">
+          <div id="nicknameHolder" class="nameHolder">
+            <div id="nickname" class="nameField" contentEditable="true" spellcheck="false"></div>
+          </div>
+          <div id="nickLabelHolder">
+            <div id="nickLabel" class="label">USER NAME</div>
+          </div>
+          <div id="initialsHolder" class="nameHolder">
+            <div id="initials"></div>
+          </div>
+        </div>
+        <div id="walletnameRow">
+          <div id="walletnameHolder" class="nameHolder">
+            <div id="defaultWalletname" class="nameField">public</div>
+            <div id="walletname" class="nameField" contentEditable="true" spellcheck="false"></div>
+          </div>
+          <div id="walletLabelHolder">
+            <div id="walletLabel" class="label">USER'S WALLET</div>
+          </div>
+        </div>
+        <div id="appearanceRow">
+          <div id="preview">
+            <div id="videoPreviewHolder">
+              <video autoplay muted playsinline id="videoPreview"></video>
+            </div>
+          </div>
+          <div id="buttonBox">
+            <div class="button" id="mic"></div>
+            <div class="button" id="video"></div>
+            <div class="button small-button" id="settings"></div>
+          </div>
+        </div>
+        <div id="audioPreviewHolderHolder">
+	  <div id="streamErrorMessage">audio or video source not available.</div>
+          <div id="audioPreviewHolder">
+            <canvas id="audioPreview" width=100, height=30></canvas>
+          </div>
+        </div>
+        <div id="actionHolder">
+          <div id="joinButton">
+            <svg id="joinIcon" viewBox="0 0 24 24"><use href="#img-door-joina"></use></svg>
+            <div id="joinLabel">join</div>
+          </div>
+        </div>
+      </div>
+      <div id="settingsMenu">
+        <div class="selectionRow">
+          <div class="mediaLabel">Video:</div>
+          <select id="videoList" class="mediaList"></select>
+        </div>
+        <div class="selectionRow">
+          <div class="mediaLabel">Audio:</div>
+          <select id="audioList" class="mediaList"></select>
+        </div>
+      </div>
+      <div id="browserCheck" class="browserCheck" style="display: none; color: red">Croquet requires a modern browser, such as Chrome, Safari or FireFox.</div>
+      <div id="browserCheckChromeIos" class="browserCheck" style="display: none; color: red">Croquet requires features not provided by Chrome on iOS. Please use Safari.</div>
+    </div>
+
+    <style>
+      html,body {
+        height: 100%;
+      }
+    </style>
+    <style id="landing-style">
+    @font-face {
+        font-family: "OpenSans-Regular";
+        src: url("./assets/fonts/open-sans-v17-latin-ext_latin-regular.woff2") format("woff2");
+    }
+
+    @font-face {
+        font-family: 'OpenSans-SemiBold';
+        src: url("./assets/fonts/open-sans-v17-latin-ext_latin-600.woff2") format("woff2");
+    }
+
+    #landing-background {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-image: url("./assets/bitmaps/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #logo {
+        margin-left: 27px;
+        margin-top: 35px;
+        width: 234px;
+        height: 36px;
+        background-image: url(./assets/bitmaps/CroquetLogo_RGB_long.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #panel {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 512px;
+        height: 720px;
+        border-radius: 9px;
+        background-color: rgba(247,247,248,1.0);
+        box-shadow: inset 0 2px 2px 0 rgba(255,255,255,0.8), 1px 1px 8px 0 rgba(0,35,46,0.2);
+        background-image: url(./assets/bitmaps/topo-lines_login-box.png);
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    #head {
+        display: flex;
+        flex-direction: column;
+        width: 512px;
+        height: 193px;
+        border-radius: 9px 9px 0 0;
+    }
+
+    #welcome {
+        margin-left: 25px;
+        margin-top: 24px;
+        font-family: OpenSans-Regular;
+        color: #00232E;
+        font-size: 48px;
+        letter-spacing: 0px;
+        line-height: 65px;
+	user-select: none;
+    }
+
+    #titleRow {
+        display: flex;
+        margin-left: 27px;
+    }
+
+    #titleLabel {
+        color: #00232E;
+        font-family: OpenSans-Regular;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 0.4px;
+        max-width: 385px;
+    }
+
+    #title {
+        margin-left: 10px;
+        color: #00232E;
+        font-family: OpenSans-Regular;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: 0.4px;
+        max-width: 385px;
+    }
+
+    #nicknameRow {
+        display: flex;
+        margin-top: 14px;
+        margin-left: 24px;
+        width: 480px;
+    }
+
+    #nickLabelHolder {
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 0px;
+        overflow: visible;
+    }
+
+    #walletLabelHolder {
+        white-space: nowrap;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 0px;
+        overflow: visible;
+    }
+
+    .label {
+        position: relative;
+        color: #2BA341;
+        font-family: OpenSans-Regular;
+        font-size: 12px;
+        letter-spacing: 0.6px;
+        line-height: 17px;
+        right: 10px;
+        top: 24px;
+        user-select: none;
+    }
+
+    .nameHolder {
+        box-sizing: border-box;
+        border-radius: 6px;
+        border: 1px solid #FFFFFF;
+        background-color: rgba(0,35,46,0.05);
+        box-shadow: inset 3px 3px 4px 0 rgba(0,35,46,0.1), inset -3px -3px 4px 0 #FFFFFF;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #nicknameHolder {
+        width: 384px;
+        height: 53px;
+    }
+
+    .nameField {
+        color: #00232E;
+        font-family: OpenSans-Regular;
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 27px;
+        flex-grow: 4;
+        min-width:  100px;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 27px;
+        margin-left: 8px;
+        margin-right: 8px;
+        z-index: 2;
+    }
+
+    #nickname {
+    }
+
+    #initialsHolder {
+        margin-left: 16px;
+        width: 65px;
+        height: 53px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #initials {
+        color: #00232E;
+        font-family: OpenSans-Regular;
+        font-size: 20px;
+        letter-spacing: 0px;
+        line-height: 27px;
+        white-space: nowrap;
+    }
+
+    #walletnameRow {
+        display: none;
+        margin-top: 14px;
+        margin-left: 24px;
+        width: 385px;
+    }
+
+    #walletLabel {
+    }
+
+    #walletnameHolder {
+        min-width: 100px;
+        width: 385px;
+        height: 53px;
+    }
+
+    #defaultWalletname {
+        width: 0px;
+        min-width: 0px;
+        display: none;
+        flex-grow: 0;
+        overflow: visible;
+        color: #008E94;
+    }
+
+    #walletname {
+    }
+
+    [contenteditable=true] {
+        outline: 0px solid transparent;
+    }
+
+    #joinButton[state="Inactive"] {
+	box-shadow: inset 0 1px 1px 0 #FFFFFF, -1px -2px 4px 0 rgba(255,255,255,0.6), 2px 2px 6px 0 rgba(0,35,46,0.2), 1px 1px 2px 0 rgba(0,35,46,0.1);
+    }
+
+    #joinButton[state="Active"] {
+        -webkit-transition: background-color 0.25s linear;
+        -ms-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+        background-color: #2BA341;
+
+	box-shadow: inset 0 1px 1px 0 #FFFFFF, -1px -2px 4px 0 rgba(255,255,255,0.6), 2px 2px 6px 0 rgba(0,35,46,0.2), 1px 1px 2px 0 rgba(0,35,46,0.1);
+    }
+
+    #joinButton[state="Active"]:hover {
+        opacity: 0.9;
+	box-shadow: inset 0 1px 1px 0 #FFFFFF, 2px 2px 4px 0 rgba(0,35,46,0.3), -2px -3px 2px 0 rgba(255,255,255,0.5), 1px 1px 2px 0 rgba(0,35,46,0.1);
+    }
+
+    #appearanceRow {
+        margin-top: 30px;
+        margin-left: 26px;
+        margin-right: 26px;
+        height: 216px;
+        display: flex;
+    }
+
+    #buttonBox {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        margin-left: 16px;
+    }
+
+    .button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-top: 12px;
+        margin-bottom: 4px;
+        margin-left: 12px;
+        margin-right: 12px;
+	box-shadow: inset 0 1px 1px 0 #FFFFFF, 2px 2px 4px 0 rgba(0,35,46,0.3), -2px -3px 2px 0 rgba(255,255,255,0.5), 1px 1px 2px 0 rgba(0,35,46,0.1);
+
+        -webkit-transition: background-color 0.25s linear;
+        -ms-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+    }
+
+    .button:hover {
+        opacity: 0.7;
+    }
+
+    .icon {
+        pointer-events: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40px;
+        height: 40px;
+    }
+
+    .small-button .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    #appearance {
+        position: absolute;
+        background-image: url(./assets/avatar/v01.svg);
+        background-size: 230dpx 230px;
+        background-repeat: no-repeat;
+        border-radius: 4px;
+        box-shadow: 0 0.5px 1px 0 rgba(0,0,0,0.3), 0 1px 3px 0 rgba(0,0,0,0.2);
+        width: 384px;
+        height: 260px;
+    }
+
+    #preview {
+        height: 100%;
+        border-radius: 12px;
+        user-select: none;
+        width: 382px;
+        background-color: black;
+    }
+
+    #videoPreviewHolder {
+        margin-left: auto;
+        margin-right: auto;
+        height: 100%;
+        width: 385px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    #videoPreview {
+        height: 100%;
+        transform: scale(-1, 1);
+    }
+
+    #streamErrorMessage {
+	width: 0px;
+	margin-left: 4px;
+        white-space: nowrap;
+	color: coral;
+	visibility: hidden;
+	user-select: none;
+    }
+
+    #audioPreviewHolderHolder {
+        width: 385px;
+        display: flex;
+        justify-content: center;
+        margin-left: 26px;
+    }
+
+    #audioPreviewHolder {
+        width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+    }
+
+    #audioPreview {
+        position: relative;
+        height: 30px;
+        width: 100px;
+        bottom: 40px;
+    }
+
+    #actionHolder {
+        display: flex;
+        margin-top: 0px;
+    }
+
+    #list-holder {
+        margin-left: auto;
+        margin-right: 26px;
+        margin-bottom: 5px;
+        align-self: flex-end;
+    }
+
+    #joinButton {
+        display: flex;
+        align-items: center;
+        margin-left: 26px;
+        margin-top: 0px;
+        width: 100px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #808080;
+        user-select: none;
+    }
+
+    #joinIcon {
+        margin-left: 16px;
+        width: 32px;
+        height: 32px;
+    }
+
+    #joinLabel {
+        color: #FFFFFF;
+        font-family: OpenSans-Regular;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 22px;
+        margin-left: auto;
+        margin-bottom: 2px;
+        margin-right: 12px;
+    }
+
+    #settingsMenu {
+        display: none;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: fit-content;
+        height: fit-content;
+        margin: 4px;
+        border-radius: 6px;
+        background-color: white;
+        font-family: OpenSans-Regular;
+        font-size: 16px;
+    }
+
+    #settingsMenu[state="shown"] {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selectionRow {
+        display: flex;
+        width: 280px;
+	justify-content: space-between;
+    }
+
+    .mediaLabel {
+        margin-right: 3px;
+        user-select: none;
+    }
+
+    #videoList {
+    }
+
+    #audioList {
+    }
+
+    .mediaList {
+        border-radius: 2px;
+        width: 220px;
+        height: 22px;
+    }
+    
+    .browserCheck {
+        position: fixed;
+        margin: auto;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        padding: 16px;
+        height: 108px;
+        border-radius: 8px;
+        background-color: #eaeaea;
+        width: 300px;
+        font-family: OpenSans-Regular;
+        font-size: 24px;
+    }
+
+    </style>
+    <div id="croquet-root" style="display: none; height: 100%"></div>
+  </body>
+</html>

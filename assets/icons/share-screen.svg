@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/material/share-screen</title>
+    <g id="icon/material/share-screen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-baseline-screen-share">
+            <g id="Icon" fill="#4D4D4D">
+                <path d="M20,18 C21.1,18 21.99,17.1 21.99,16 L22,6 C22,4.8954305 21.1045695,4 20,4 L4,4 C2.89,4 2,4.89 2,6 L2,16 C2,17.1045695 2.8954305,18 4,18 L0,18 L0,20 L24,20 L24,18 L20,18 Z M13,14.47 L13,12.28 C10.22,12.28 8.39,13.13 7,15 C7.56,12.33 9.11,9.67 13,9.13 L13,7 L17,10.73 L13,14.47 Z" id="Icon-Shape"></path>
+            </g>
+            <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

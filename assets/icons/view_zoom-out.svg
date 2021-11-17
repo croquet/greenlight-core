@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/material/view_zoom-out</title>
+    <g id="icon/material/view_zoom-out" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-baseline-minus">
+            <g id="Icon" fill="#4D4D4D">
+                <polygon id="Icon-Path" points="19 12.998 5 12.998 5 10.998 19 10.998"></polygon>
+            </g>
+            <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

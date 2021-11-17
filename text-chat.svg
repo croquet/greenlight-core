@@ -1,0 +1,15 @@
+<!-- Generated with https://svgsprite.com/tools/svg-sprite-generator/
+     Add all files in assets/icon, and choose HTML.
+-->
+
+
+<svg display="none">
+	<defs>
+		<g id="img-send">
+			<g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><path fill="#077751" d="M2.01 21L23 12 2.01 3 2 10 17 12 2 14z"/><path d="M0 0H24V24H0z"/></g>
+		</g>
+		<g id="img-send-disabled">
+			<g xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><path fill="#c0c0c0" d="M2.01 21L23 12 2.01 3 2 10 17 12 2 14z"/><path d="M0 0H24V24H0z"/></g>
+		</g>
+	</defs>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/material/lock</title>
+    <g id="icon/material/lock" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic-sharp-lock">
+            <g id="Icon" fill="#4D4D4D">
+                <path d="M20,8 L17,8 L17,6.21 C17,3.6 15.09,1.27 12.49,1.02 C11.0853278,0.884174716 9.6885441,1.34731012 8.64328991,2.29546418 C7.59803573,3.24361825 7.00133867,4.5887769 7,6 L7,8 L4,8 L4,22 L20,22 L20,8 Z M12,17 C10.9,17 10,16.1 10,15 C10,13.9 10.9,13 12,13 C13.1,13 14,13.9 14,15 C14,16.1 13.1,17 12,17 Z M9,8 L9,6 C9,4.34 10.34,3 12,3 C13.66,3 15,4.34 15,6 L15,8 L9,8 Z" id="Icon-Shape"></path>
+            </g>
+            <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

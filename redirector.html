@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script type="text/javascript">
+    let commit=""; // rewritten by the deploy script
+    let exec = new RegExp("(.*)\/landing\.html(.*)").exec(window.location.href);
+
+    if (exec) {
+	let path = `${exec[1]}/${commit}/landing.html${exec[2]}`;
+	window.location.assign(path);
+    }
+  </script>
+</body>
+</html>

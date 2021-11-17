@@ -1,0 +1,11 @@
+{
+  "name": "greenlight-core",
+  "author": "Croquet Corporation",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "rollup": "^2.52.7",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel='icon' type='image/png' href='./icon.png'>
+    <link rel='stylesheet' href='./src/pitch.css'>
+    <script type="text/javascript" src="./croquet/croquet.min.js"></script>
+    <script type="module">
+      import {makeMain, Library} from "./croquet-virtual-dom.js";
+      import {boards, minibrowser, text} from "./src/p.js";
+      import {widgets} from "./widgets.js";
+      import apiKey from "./apiKey.js";
+
+      let library = new Library();
+      library.addLibrary("boards", boards);
+      library.addLibrary("widgets", widgets);
+      library.addLibrary("minibrowser", minibrowser);
+      library.addLibrary("text", text);
+
+      window._production = ".";
+
+      window.onload = makeMain("boards.p", {
+	  autoSleep: false,
+	  tps: 2,
+	  apiKey,
+	  appId: "io.croquet.vdom.p",
+	  eventRateLimit: 60}, library, null, `./greenlight.svg`, true);
+    </script>
+</head>
+<body style="margin: 0px; touch-action: manipulation">
+    <div id="croquet-root" style="width: 100%; height: 100%"></div>
+</body></html>

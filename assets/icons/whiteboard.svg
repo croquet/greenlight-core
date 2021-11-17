@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icon/material/whiteboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/material/whiteboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mdi-draw">
+            <g id="Icon" transform="translate(2.000000, 3.000000)" fill="#4D4D4D">
+                <path d="M7.75,17.85 C9.53,17.15 9.14,15.22 8.24,14 C7.35,12.75 6.12,11.89 4.88,11.06 C3.99525172,10.502359 3.20529297,9.8069252 2.54,9 C2.26,8.67 1.69,8.06 2.27,7.94 C2.86,7.82 3.88,8.4 4.4,8.62 C5.31,9 6.21,9.44 7.05,9.96 L8.06,8.26 C6.5,7.23 4.5,6.32 2.64,6.05 C1.58,5.89 0.46,6.11 0.1,7.26 C-0.22,8.25 0.29,9.25 0.87,10.03 C2.24,11.86 4.37,12.74 5.96,14.32 C6.3,14.65 6.71,15.04 6.91,15.5 C7.12,15.94 7.07,15.97 6.6,15.97 C5.36,15.97 3.81,15 2.8,14.36 L1.79,16.06 C3.32,17 5.88,18.47 7.75,17.85 M18.84,2.25 C19.06,2.03 19.06,1.67 18.84,1.46 L17.54,0.16 C17.3223215,-0.049796083 16.9776785,-0.049796083 16.76,0.16 L15.74,1.18 L17.82,3.26 M9,7.92 L9,10 L11.08,10 L17.23,3.85 L15.15,1.77 L9,7.92 Z" id="Icon-Shape"></path>
+            </g>
+            <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

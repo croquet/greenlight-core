@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>toggle-icon_mic-off@3x</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="20" cy="20" r="20"></circle>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="toggle-icon_mic-off">
+            <g id="Oval-Copy" stroke-linejoin="square">
+                <circle stroke="url(#linearGradient-1)" stroke-width="1" cx="20" cy="20" r="19.5"></circle>
+                <circle stroke="#F09132" stroke-width="2" cx="20" cy="20" r="19"></circle>
+            </g>
+            <g id="mdi-microphone" transform="translate(8.000000, 8.000000)">
+                <g id="Icon" fill="#F09132">
+                    <path d="M12,2 C13.6568542,2 15,3.34314575 15,5 L15,11 C15,12.6568542 13.6568542,14 12,14 C10.3431458,14 9,12.6568542 9,11 L9,5 C9,3.34314575 10.3431458,2 12,2 M19,11 C19,14.53 16.39,17.44 13,17.93 L13,21 L11,21 L11,17.93 C7.61,17.44 5,14.53 5,11 L7,11 C7,13.7614237 9.23857625,16 12,16 C14.7614237,16 17,13.7614237 17,11 L19,11 Z" id="Icon-Shape"></path>
+                </g>
+                <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+            </g>
+            <g id="Group" transform="translate(7.000000, 7.000000)" stroke="#F09132" stroke-linecap="square" stroke-width="2">
+                <g id="Line-Copy">
+                    <line x1="0" y1="0" x2="26" y2="26"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

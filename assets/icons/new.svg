@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>icon/material/new</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/material/new" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mdi-expand-all">
+            <g id="Icon" fill="#4D4D4D">
+                <path d="M18,8 L8,8 L8,18 L6,18 L6,8 C6,6.8954305 6.8954305,6 8,6 L18,6 L18,8 M14,2 L4,2 C2.8954305,2 2,2.8954305 2,4 L2,14 L4,14 L4,4 L14,4 L14,2 M22,12 L22,20 C22,21.1045695 21.1045695,22 20,22 L12,22 C10.8954305,22 10,21.1045695 10,20 L10,12 C10,10.8954305 10.8954305,10 12,10 L20,10 C21.1045695,10 22,10.8954305 22,12 M20,15 L17,15 L17,12 L15,12 L15,15 L12,15 L12,17 L15,17 L15,20 L17,20 L17,17 L20,17 L20,15 Z" id="Icon-Shape"></path>
+            </g>
+            <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>

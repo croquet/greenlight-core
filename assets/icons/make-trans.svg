@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/make-trans</title>
+    <g id="icon/make-trans" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-7">
+            <path d="M15,2 C16.104,2 17,2.896 17,4 L17,4 L4,4 L4,17 C2.896,17 2,16.104 2,15 L2,15 L2,4 C2,2.9 2.9,2 4,2 L4,2 Z M17.0039,10 L17.0039,15 C17.0039,16.1 16.1049,17 15.0039,17 L9.9439,17 L9.9439,15 L15.0039,15 L15.0039,10 L17.0039,10 Z" id="Combined-Shape" fill="#4D4D4D"></path>
+            <path d="M8.004,20 L20.004,20 L20.004,8 L8.004,8 L8.004,20 Z M19.864,6 L8.135,6 C6.965,6 6.004,6.8 6.004,7.78 L6.004,20.22 C6.004,21.2 6.965,22 8.135,22 L19.864,22 C21.044,22 22.004,21.2 22.004,20.22 L22.004,7.78 C22.004,6.8 21.044,6 19.864,6 L19.864,6 Z" id="Fill-5" fill="#4D4D4D"></path>
+            <rect id="ViewBox" fill-rule="nonzero" x="0" y="0" width="24" height="24"></rect>
+        </g>
+    </g>
+</svg>
