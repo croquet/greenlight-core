@@ -16,7 +16,7 @@ This repository contains the code and images files to run Greenlight. The entire
 
 The `/assets/` directory contains icons and bitmaps. Most of those are compiled and assembled into `greenlight.svg`, and referred to with `<use>` element in svg.
 
-If you have an external dashboard implementation, something like the official [Greenlight](croquet.io/greenlight) site, you can use code in `greenlight.js` from the dashboard to invoke Greenlight. A simple example of a mock dashboard is `[landing.html](https://github.com/croquet/greenlight-core/blob/main/landing.html)`.
+If you have an external dashboard implementation, something like the official [Greenlight](croquet.io/greenlight) site, you can use code in `greenlight.js` from the dashboard to invoke Greenlight. A simple example of a mock dashboard is [landing.html](https://github.com/croquet/greenlight-core/blob/main/landing.html).
 
 `/text-chat.html`, `/text-chat.svg` `/src/text-chat.js` and `/src/text-chat.css` are used for the internal text-chat feature.
 
