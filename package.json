@@ -2,6 +2,9 @@
   "name": "greenlight-core",
   "author": "Croquet Corporation",
   "license": "UNLICENSED",
+  "scripts": {
+	  "start": "node server.js"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "rollup": "^2.52.7",

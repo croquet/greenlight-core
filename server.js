@@ -211,7 +211,7 @@ function handleRequest(request, response) {
 http.createServer(handleRequest).listen(port);
 
 require('dns').lookup(require('os').hostname(), (err, addr, _fam) => {
-    console.log(`Running at http://${addr}${((port === 80) ? '' : ':')}${port}/`);
+    console.log(`Running at http://${addr === undefined ? "localhost" : addr}${((port === 80) ? '' : ':')}${port}/`);
 });
 
 console.log('The simple server has started...');
