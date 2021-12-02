@@ -6,9 +6,9 @@
     <script type="text/javascript" charset="UTF-8" src="./croquet/croquet.min.js"></script>
     <link rel="stylesheet" href="./src/text-chat.css">
     <script type="module">
-      import {makeMain, Library} from "./croquet-virtual-dom.js";
+      import {makeMain, Library} from "./croquet/croquet-virtual-dom.js";
+      import {widgets} from "./croquet/widgets.js";
       import {chat} from "./src/text-chat.js";
-      import {widgets} from "./widgets.js";
       import apiKey from "./apiKey.js";
 
       let library = new Library();

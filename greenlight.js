@@ -45,7 +45,7 @@ function loadGreenlight(cleanup, options, moreOptions) {
     });
 
     return Promise.all([p0, p1]).then(() => {
-        let p2 = import(`${version}/croquet-virtual-dom.js`).then((mod) => {
+        let p2 = import(`${version}/croquet/croquet-virtual-dom.js`).then((mod) => {
             makeMain = mod.makeMain;
             Library = mod.Library;
         });
@@ -56,7 +56,7 @@ function loadGreenlight(cleanup, options, moreOptions) {
             text = mod.text;
         });
 
-        let p4 = import(`${version}/widgets.js`).then((mod) => {
+        let p4 = import(`${version}/croquet/widgets.js`).then((mod) => {
             widgets = mod.widgets;
         });
 

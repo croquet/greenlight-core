@@ -20,7 +20,7 @@ COMMIT=`echo ${META} | awk '{print $2}'`
 echo ${META} > dist/meta/version.txt
 
 rsync -r --exclude='icons/*\.svg' --exclude='landing/*\.svg' --exclude='avatar/*\.svg' \
-      ./icon.png ./assets widgets.js croquet-virtual-dom.js croquet \
+      ./icon.png ./assets croquet \
       index.html landing.html landing-loader.js landing.js text-chat.svg text-chat.html \
       greenlight.svg greenlight.js apiKey.js \
       dist
@@ -28,6 +28,3 @@ rsync -r --exclude='icons/*\.svg' --exclude='landing/*\.svg' --exclude='avatar/*
 npx rollup src/p.js --config rollup.config.js --file dist/src/p.js --format es
 
 cp ./src/{text-chat.js,text-chat.css,pitch.css} dist/src
-cp ./croquet/croquet.min.js dist/croquet/
-cp croquet-virtual-dom.js dist/croquet-virtual-dom.js
-cp widgets.js dist/widgets.js

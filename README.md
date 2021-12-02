@@ -2,65 +2,87 @@
 
 ## Introduction
 
-Greenlight is a real time collaboration workspace application. A room in Greenlight is a large 2-dimensional space where the user can create other collaborative apps, notes, images and other web pages and manipualte them.
+Greenlight is a real time collaboration workspace application. A room in Greenlight is a large two-dimensional space where the user can create many collaborative apps, notes, images and web pages and manipualte them.
 
-Those apps and objects are represented as browser DOM elements, so that they can take advantage of the browser's features while remaining lightweight.
+<p align="center">
+<img src="https://gist.githubusercontent.com/yoshikiohshima/6644ea9a84561d6f8ec365003a9ce22a/raw/0a97b8893e3549c4f8086af1a52413dcc16eb111/greenlght.png" width="600"/>
+</p>
 
-The network layer is powered by [Croquet](croquet.io/docs). Croquet's unique technology ensures bit-identical computation in each participants' local browser, reducing network traffic and latency.
+Those apps and objects are visualized with browser's DOM elements, sometimes in `iframes`, so that they can take advantage of the browser's features while keeping the Greenlight core lightweight.
 
-Greenlight is built on top of the [Croquet Virtual DOM Framework](croquet.io/docs/virtual-dom). The Virtual DOM Fromework provides a simple abstraction layer to support Croquet's Model-View spearation by storing virtualized DOM property and structure. The framework treats application code as data so that it can be modified at runtime, and Greenlight has the capability to support live programming.
+Its network layer is powered by [Croquet](https://croquet.io/docs). Croquet's unique technology ensures bit-identical computation in each participants' local browser, reducing network traffic and latency.
+
+Greenlight is built on top of the [Croquet Virtual DOM Framework](https://croquet.io/docs/virtual-dom). The Virtual DOM Fromework provides a simple abstraction layer to support Croquet's Model-View spearation by storing virtualized DOM property and structure. The framework treats application code as data so that it can be modified at runtime, and Greenlight has the capability to support live programming. The production installation of Greenlight is available at [https://croquet.io/greenlight](https://croquet.io/greenlight). 
+
+This repository provides the code of core Greenlight used for the production, its purpose is to provide the code samples of a large and flexible working Croquet application. While all core features are provided, some apps in the tool bar may not be started as they are restricted to only run from the `croquet.io` domain.  If you open an app and see the image like this, it is not a bug. but the app is restricted.
+
+<p align="center">
+<img src="https://gist.githubusercontent.com/yoshikiohshima/6644ea9a84561d6f8ec365003a9ce22a/raw/065f72dd015ebb8b10390ffefd72d1bee2c958e6/sad.png" width="200"/>
+</p>
+
+On the other hand, you are very welcome to change the list of apps in the tool bar and make your own, or make it so that you can customize the tool bar for each room.
 
 ## Code Organization
 
 This repository contains the code and images files to run Greenlight. The entire application source code is in the `/src/` directory.
 
-The `/assets/` directory contains icons and bitmaps. Most of those are compiled and assembled into `greenlight.svg`, and referred to with `<use>` element in svg.
+The `/assets/` directory contains icons and bitmaps. Most of those svg files are fed through [SVG sprite generator](https://svgsprite.com/tools/svg-sprite-generator/) and compiled into `greenlight.svg`. Individual icons are referred to with the `<use>` element from application code.
 
-If you have an external dashboard implementation, something like the official [Greenlight](croquet.io/greenlight) site, you can use code in `greenlight.js` from the dashboard to invoke Greenlight. A simple example of a mock dashboard is [landing.html](https://github.com/croquet/greenlight-core/blob/main/landing.html).
+If you create an external dashboard, something like the production [Greenlight](https://croquet.io/greenlight), you can use code in `greenlight.js`. to invoke Greenlight with additional information. A simple example of a mock dashboard is provided at: [landing.html](https://github.com/croquet/greenlight-core/blob/main/landing.html).
 
-`/text-chat.html`, `/text-chat.svg` `/src/text-chat.js` and `/src/text-chat.css` are used for the internal text-chat feature.
+`/text-chat.html`, `/text-chat.svg` `/src/text-chat.js` and `/src/text-chat.css` are used for the internal text-chat feature.  In other words, the text chat of Greenlight is its own Croquet application.
 
 ## Invoking Greenlight
 
-In order to run Greenlight locally:
+While running Greenlight does not require Node or Npm; having them installed on your computer in general helps.
+
+First, you need to copy or install three library files. If you already have Node.js and Npm installed, you can run:
+
+   ```bash
+   npm run setup
+   ```
+
+to download following three files. If your system does not have curl, you can open the unpkg URLs specified below in a web browser, and save the js files under the specified names.
+
+If you don't have npm, manually copy three files.
 
 1. Download croquet.min.js
 
    ```bash
-   curl -L -o croquet/croquet.min.js https://unpkg.com/@croquet/croquet@1.0.5
+   curl -L -o croquet/croquet.min.js https://unpkg.com/@croquet/croquet
    ```
 
 2. Download croquet-virtual-dom.js
 
    ```bash
-   curl -L -o croquet-virtual-dom.js https://unpkg.com/@croquet/virtual-dom@1.0.8
+   curl -L -o croquet/croquet-virtual-dom.js https://unpkg.com/@croquet/virtual-dom
    ```
 
 3. Download widgets.js
 
    ```bash
-   curl -L -o widgets.js https://unpkg.com/@croquet/virtual-dom@1.0.8/widgets.js
+   curl -L -o croquet/widgets.js https://unpkg.com/@croquet/virtual-dom/widgets.js
    ```
 
-   Those files are downloaded to local disk to allow local development described below.
-
-   Alternatively, you can run `npm install @croquet/croquet` and `npm install @croquet/virtual-dom`, and copy spcified files.
+Those files are downloaded to your local disk to allow local development described below.
 
 4. Add your Croquet API key to `apiKey.js`
-   Obtain your apiKey from [Croquet Dev Portal](croquet.io/keys) and insert the key into `apiKey.js`:
+   Obtain your apiKey from [Croquet Dev Portal](croquet.io/keys), create `apiKey.js` by copying `apiKey.js-example` to `apiKey.js`, and insert the key into it.
 
    ```JavaScript
-   const apiKey = "<put your apiKey from croquet.io/keys>";
+   const apiKey = "<insert your apiKey from croquet.io/keys>";
    export default apiKey;
    ```
 
-5. Then run the server:
+5. If you have node installed you can use the simple server implementation:
 
    ```Bash
    node server.js
    ```
 
-6. And open `localhost:8000/index.html`.
+Otherwise, use your own server for local development, or upload the directory to a server. 
+
+6. Open `localhost:8000/index.html`. Note that Greenlight implementation depends on native ES6 modules, and cannot be run via the `file:` URL scheme. 
 
 ## Development and Debugging
 
@@ -70,20 +92,26 @@ Adjusting CSS or view side event handling can involve a lot of iterative develop
 
 ### Debugging
 
-Setting a breakpoint from the file list in the browser's developer console does not work, as the expanders are stringified and then evaluated at runtime. Either insert `debugger` statement in code, or choose the VM1234 file shown in console and set a breakpoint.
+You can set a breakpoint in code to see what the application is doing. You can certainly insert the `debugger` statement in a JS file. Note, however, that the expander code (most of .js files in the `/src/` directory) are stringified and then evaluated at runtime. It means that the file you navigate to from the Sources tab of the Chrome Development Tool is not the actual code that the browser is running. If you would like to set a break point in a running code, see the source file display in the console:
+
+<p align="center">
+<img src="https://gist.githubusercontent.com/yoshikiohshima/6644ea9a84561d6f8ec365003a9ce22a/raw/de5c60ff73262b99ba366d32ca440aa46fb2d1f5/debug.png" width="300"/>
+</p>
+
+where in this example showing file as `VM197`, `VM348`, etc. and click on it. Then the expander code that produced the console log can be accessed, and you can insert a break point.
 
 ## Deployment
 
-You don't have to run `npm` to test things out. When you're ready to deploy Greenlight with minified code, run:
+When you are ready to deploy Greenlight and you wish to minify code, run:
 
 ```JavaScript
 npm install
 ```
 
-and then
+and then:
 
 ```Bash
 ./build-files.sh
 ```
 
-That creates a self-contained directory under `dist` which you can simply copy to your server.
+This creates a self-contained directory under `/dist/`, which you can simply copy to your server.

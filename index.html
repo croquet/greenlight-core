@@ -7,9 +7,9 @@
     <link rel='stylesheet' href='./src/pitch.css'>
     <script type="text/javascript" src="./croquet/croquet.min.js"></script>
     <script type="module">
-      import {makeMain, Library} from "./croquet-virtual-dom.js";
+      import {makeMain, Library} from "./croquet/croquet-virtual-dom.js";
+      import {widgets} from "./croquet/widgets.js";
       import {boards, minibrowser, text} from "./src/p.js";
-      import {widgets} from "./widgets.js";
       import apiKey from "./apiKey.js";
 
       let library = new Library();

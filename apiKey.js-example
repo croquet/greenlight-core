@@ -1,0 +1,2 @@
+const apiKey = "<insert your apiKey from croquet.io/keys>";
+export default apiKey;
