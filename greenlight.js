@@ -117,9 +117,8 @@ function join(options, moreOptions) {
         viewIdDebugSuffix: initials,
         tps: 2,
         apiKey,
-        appId: "io.croquet.vdom.p",
+        appId: "io.croquet.vdom.greenlight",
         eventRateLimit: 60,
-        heraldUrl: `https://us-central1-usermanagement-291217.cloudfunctions.net/updatePitchPresence?room=${options.sessionName}`
     }, library, cSessionName, `${path}/greenlight.svg`, true)();
 }
 
