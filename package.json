@@ -1,11 +1,9 @@
 {
   "name": "greenlight-core",
   "author": "Croquet Corporation",
-  "license": "UNLICENSED",
+  "license": "Apache 2.0",
   "scripts": {
-      "start": "node server.js"
-  },
-  "scripts": {
+      "start": "node server.js",
       "setup": "curl -L -o croquet/croquet.min.js https://unpkg.com/@croquet/croquet; curl -L -o croquet/croquet-virtual-dom.js https://unpkg.com/@croquet/virtual-dom; curl -L -o croquet/widgets.js https://unpkg.com/@croquet/virtual-dom/widgets.js"
   },
   "devDependencies": {

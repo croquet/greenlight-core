@@ -125,5 +125,3 @@ function join(options, moreOptions) {
 
 window._setPath = setPath;
 window._loadGreenlight = loadGreenlight;
-
-
