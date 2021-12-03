@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Greenlight is a real time collaboration workspace application. A room in Greenlight is a large two-dimensional space where the user can create many collaborative apps, notes, images and web pages and manipualte them.
+Greenlight is a real time collaboration workspace application. A room in Greenlight is a large two-dimensional space where users can create many collaborative apps, notes, images and web pages and manipulate them.
 
 <p align="center">
 <img src="https://gist.githubusercontent.com/yoshikiohshima/6644ea9a84561d6f8ec365003a9ce22a/raw/0a97b8893e3549c4f8086af1a52413dcc16eb111/greenlght.png" width="600"/>
@@ -10,21 +10,21 @@ Greenlight is a real time collaboration workspace application. A room in Greenli
 
 Those apps and objects are visualized with browser's DOM elements, sometimes in `iframes`, so that they can take advantage of the browser's features while keeping the Greenlight core lightweight.
 
-Its network layer is powered by [Croquet](https://croquet.io/docs). Croquet's unique technology ensures bit-identical computation in each participants' local browser, reducing network traffic and latency.
+Its network layer is powered by [Croquet](https://croquet.io). Croquet's unique technology ensures bit-identical computation in each participants' local browser, reducing network traffic and latency.
 
-Greenlight is built on top of the [Croquet Virtual DOM Framework](https://croquet.io/docs/virtual-dom). The Virtual DOM Fromework provides a simple abstraction layer to support Croquet's Model-View spearation by storing virtualized DOM property and structure. The framework treats application code as data so that it can be modified at runtime, and Greenlight has the capability to support live programming. The production installation of Greenlight is available at [https://croquet.io/greenlight](https://croquet.io/greenlight). 
+Greenlight is built on top of the [Croquet Virtual DOM Framework](https://croquet.io/docs/virtual-dom). The Virtual DOM Fromework provides a simple abstraction layer to support Croquet's Model-View separation by storing virtualized DOM property and structure. The framework treats application code as data so that it can be modified at runtime, which enables Greenlight to have the capability to support live programming. The production installation of Greenlight is available at [https://croquet.io/greenlight](https://croquet.io/greenlight). 
 
-This repository provides the code of core Greenlight used for the production, its purpose is to provide the code samples of a large and flexible working Croquet application. While all core features are provided, some apps in the tool bar may not be started as they are restricted to only run from the `croquet.io` domain.  If you open an app and see the image like this, it is not a bug. but the app is restricted.
+This repository provides the code of core Greenlight used for the production, its purpose is to provide code samples of a large and flexible working Croquet application. While all core features are provided, some apps in the tool bar may not be started as they are restricted to only run from the `croquet.io` domain.  If you open an app and see the image below, it means the app is restricted.
 
 <p align="center">
 <img src="https://gist.githubusercontent.com/yoshikiohshima/6644ea9a84561d6f8ec365003a9ce22a/raw/065f72dd015ebb8b10390ffefd72d1bee2c958e6/sad.png" width="200"/>
 </p>
 
-On the other hand, you are very welcome to change the list of apps in the tool bar and make your own, or make it so that you can customize the tool bar for each room.
+You are very welcome to change the list of apps in the tool bar and make your own, or make it so that you can customize the tool bar for each room.
 
 ## Code Organization
 
-This repository contains the code and images files to run Greenlight. The entire application source code is in the `/src/` directory.
+This repository contains code and images files to run Greenlight. The entire application source code is in the `/src/` directory.
 
 The `/assets/` directory contains icons and bitmaps. Most of those svg files are fed through [SVG sprite generator](https://svgsprite.com/tools/svg-sprite-generator/) and compiled into `greenlight.svg`. Individual icons are referred to with the `<use>` element from application code.
 
@@ -86,7 +86,7 @@ Otherwise, use your own server for local development, or upload the directory to
 
 ## Development and Debugging
 
-Developing Greenlight does not involve any build or transpilation process. Just edit the file and reload the page. All Croquet Virtual DOM applications work this way.
+Developing Greenlight does not involve any build or transpilation process. Just edit the file and reload the page. All Croquet Virtual DOM applications work this way.
 
 Adjusting CSS or view side event handling can involve a lot of iterative development. To speed up browser reloads, you can add `?isLocal` to the URL (i.e., `localhost:8000/?isLocal`) to skip the actual Croquet network initialization. This flag uses an emulated reflector for a single node impelemented in the Virtual DOM Framework. In other words, you can develop the "single user" aspects of Greenlight totally offline in this way.
 
