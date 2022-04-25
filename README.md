@@ -12,7 +12,7 @@ Those apps and objects are visualized with browser's DOM elements, sometimes in 
 
 Its network layer is powered by [Croquet](https://croquet.io). Croquet's unique technology ensures bit-identical computation in each participants' local browser, reducing network traffic and latency.
 
-Greenlight is built on top of the [Croquet Virtual DOM Framework](https://croquet.io/docs/virtual-dom). The Virtual DOM Fromework provides a simple abstraction layer to support Croquet's Model-View separation by storing virtualized DOM property and structure. The framework treats application code as data so that it can be modified at runtime, which enables Greenlight to have the capability to support live programming. The production installation of Greenlight is available at [https://croquet.io/greenlight](https://croquet.io/greenlight). 
+Greenlight is built on top of the [Croquet Virtual DOM Framework](https://croquet.io/docs/virtual-dom). The Virtual DOM Framework provides a simple abstraction layer to support Croquet's Model-View separation by storing virtualized DOM property and structure. The framework treats application code as data so that it can be modified at runtime, which enables Greenlight to have the capability to support live programming. The production installation of Greenlight is available at [https://croquet.io/greenlight](https://croquet.io/greenlight). 
 
 This repository provides the code of core Greenlight used for the production, its purpose is to provide code samples of a large and flexible working Croquet application. While all core features are provided, some apps in the tool bar may not be started as they are restricted to only run from the `croquet.io` domain.  If you open an app and see the image below, it means the app is restricted.
 
