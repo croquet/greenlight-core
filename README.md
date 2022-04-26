@@ -80,6 +80,8 @@ Those files are downloaded to your local disk to allow local development describ
    node server.js
    ```
 
+There is an equivalent server written in Python (server.py), for those who don't install Node.js but has Python.
+
 Otherwise, use your own server for local development, or upload the directory to a server. 
 
 6. Open `localhost:8000/index.html`. Note that Greenlight implementation depends on native ES6 modules, and cannot be run via the `file:` URL scheme. 
