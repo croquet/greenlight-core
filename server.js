@@ -196,6 +196,10 @@ function handleRequest(request, response) {
     let pathname = decodeURIComponent(urlObject.pathname);
     let method = request.method;
 
+    if (method === "GET" && pathname.endsWith("/")) {
+        pathname += "index.html";
+    }
+
     let filePath = path.join(currentDir, pathname);
     let normalized = path.dirname(path.normalize(filePath));
     if (normalized.slice(0, currentDir.length) !== currentDir) {
