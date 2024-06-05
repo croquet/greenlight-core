@@ -193,6 +193,14 @@ function handleRequest(request, response) {
     let pathname = decodeURIComponent(urlObject.pathname);
     let method = request.method;
 
+    let filePath = path.join(currentDir, pathname);
+    let normalized = path.dirname(path.normalize(filePath));
+    if (normalized.slice(0, currentDir.length) !== currentDir) {
+        response.writeHead(403, {});
+        response.end();
+        return;
+    }
+
     console.log(`[${(new Date()).toUTCString()}] "${method} ${pathname}"`);
     if (method === 'GET') {
         return get(request, response, pathname);
